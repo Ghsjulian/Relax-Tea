@@ -2,9 +2,9 @@
 class __database__ {
   private $__info__;
   public $__conn__;
-  private $__host__ = "85.10.205.173:3306";
-  private $__user__ = "ghsjulian";
-  private $__password__ = "ghs_&#80;";
+  private $__host__ = "host_name";
+  private $__user__ = "user_name";
+  private $__password__ = "password";
   private $__db__ = "relaxtea";
 
   public function __construct() {
