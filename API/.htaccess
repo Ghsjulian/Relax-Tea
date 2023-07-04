@@ -1,0 +1,18 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Turn on the rewrite engine
+RewriteEngine  on
+# If the request doesn't end in .php (Case insensitive) continue processing rules
+RewriteCond %{REQUEST_URI} !\.php$ [NC]
+# If the request doesn't end in a slash continue processing the rules
+#RewriteCond %{REQUEST_URI} [^/]$
+
+#RewriteRule ^(.*)$ $1.php [L]
+
+#RewriteCond %{HTTP_HOST} ^(www.)?blamcast\.net$ [NC]
+#RewriteRule ^(.+)/$ http://%{HTTP_HOST}/$1 [R=301,L]
+DefaultType application/x-httpd-php
+
+DirectoryIndex index index.php

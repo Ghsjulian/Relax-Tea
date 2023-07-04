@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="stylesheet" href="assets/css/App.css" />
+    <link rel="stylesheet" href="assets/css/Responsive.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <title>Relax Tea | Online Shopping Website</title>
+  </head>
+  <body>
+    <div id="root">
+      <div class="nav-bar">
+        <h2 class="logo">Relax <span>Tea</span></h2>
+        <a href="#" class=""><i class="bi bi-house-door"></i></a>
+        <a href="#"><i class="bi bi-person-circle"></i></a>
+        <a href="#" class="" title="Cart"
+          ><i class="bi bi-cart"></i><small id="cart">3</small></a
+        >
+        <a href="#"><i class="bi bi-bell"></i><small id="bell">6</small></a>
+        <a href="server/logout"> <i class="bi bi-box-arrow-right"></i></a>
+        <!-- <a href="pages/login"> <i class="bi bi-shield-lock"></i></a>
+        <a href="pages/signup"> <i class="bi bi-person-plus"></i></a>
+        --->
+        <input type="search" placeholder="Search..." id="search" />
+        <button id="search-btn" type="search">
+          <i class="bi bi-search"></i>
+        </button>
+
+        <span id="menu" onclick="__menu__()"> <i class="bi bi-list"></i></span>
+      </div>
+      <div id="mobile_menu" style="display: none" class="menu" check="0">
+        <h3>Relax Tea</h3>
+        <input type="search" placeholder="Search..." id="m_search" />
+        <button id="search_btn" type="search">
+          <i class="bi bi-search"></i>
+        </button>
+        <li>
+          <a href="/home"><i class="bi bi-house-door"></i>Home</a>
+        </li>
+        <li>
+          <a href="/home"><i class="bi bi-person-circle"></i>Profile</a>
+        </li>
+        <li>
+          <a href="/home"
+            ><i class="bi bi-cart"></i>Cart<small id="cart">3</small></a
+          >
+        </li>
+        <li>
+          <a href="/home"
+            ><i class="bi bi-bell"></i>Notification<small id="bell">5</small></a
+          >
+        </li>
+        <li>
+          <a href="/home"><i class="bi bi-box-arrow-right"></i>Logout</a>
+        </li>
+        <li>
+          <a href="/home"><i class="bi bi-shield-lock"></i>Login</a>
+        </li>
+        <li>
+          <a href="/home"><i class="bi bi-person-plus"></i>Signup</a>
+        </li>
+        <li>
+          <a href="/about"><i class="bi bi-info-circle"></i>About</a>
+        </li>
+        <li>
+          <a href="/contact"><i class="bi bi-telephone"></i>Contact</a>
+        </li>
+        <li>
+          <a href="/projects"><i class="bi bi-laptop"></i>Project</a>
+        </li>
+      </div>
+      <div class="home-section">
+        <h2 class="home-logo">Relax Tea</h2>
+        <p>
+          We serve fresh tea all around Bangladesh . Our product is pretty good
+          and we deliver soon our product . To buy anyone just order now .
+        </p>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="assets/images/tea222.jpg" />
+          <h3>Fresh quality tea new product</h3>
+          <a id="view" href="#">View Product</a>
+          <a id="order" href="#">Order Now</a>
+        </div>
+        <div class="column">
+          <img src="assets/images/tea111.jpg" />
+          <h3>Fresh quality tea new product . new sylhet tea house</h3>
+          <a id="view" href="#">View Product</a>
+          <a id="order" href="#">Order Now</a>
+        </div>
+
+        <div class="column">
+          <img src="assets/images/tea555.jpg" />
+          <h3>Fresh quality tea new product . new sylhet tea house</h3>
+          <a id="view" href="#">View Product</a>
+          <a id="order" href="#">Order Now</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      function __ghs(tag) {
+        return document.querySelector(tag);
+      }
+      function __menu__() {
+        var check = document
+          .getElementById("mobile_menu")
+          .getAttribute("check");
+        if (check === "0") {
+          document.getElementById("mobile_menu").style.display = "block";
+          document.getElementById("mobile_menu").setAttribute("check", "1");
+        } else {
+          document.getElementById("mobile_menu").style.display = "none";
+          document.getElementById("mobile_menu").setAttribute("check", "0");
+        }
+      }
+
+      function __changeBG__() {
+        var background = [
+          "1687085990836",
+          "1687086024939",
+          "1687086119230",
+          "1687086239160",
+          "1687086354512",
+          "1687086425663",
+          "tea",
+          "t5",
+          "t7",
+          "t8",
+          "t11",
+          "tea111",
+          "tea2222",
+          "tea444",
+          "tea555",
+        ];
+        var bgElement = __ghs(".home-section");
+        var randomIndex = Math.floor(Math.random() * background.length);
+
+        bgElement.style.backgroundImage =
+          "url('assets/images/" + background[randomIndex] + ".jpg')";
+      }
+      setInterval(() => {
+        __changeBG__();
+      }, 2000);
+    </script>
+  </body>
+</html>
